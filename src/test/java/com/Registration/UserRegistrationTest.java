@@ -54,4 +54,14 @@ public class UserRegistrationTest {
         boolean valid=RegisterValidation.validPasswordRuleOne("adsfty");
         Assert.assertEquals(false,valid);
     }
+    @Test
+    public void givenPasswordHaveOneCapitalLetter_IsProper_ThenReturnTrue(){
+        boolean valid=RegisterValidation.validPasswordWithOneCapitalLetter("hEyyPassword");
+        Assert.assertEquals(true,valid);
+    }
+    @Test
+    public void givenPasswordHaveOneCapitalLetter_IsUnProper_ThenReturnTrue(){
+        boolean valid=RegisterValidation.validPasswordWithOneCapitalLetter("heypassword");
+        Assert.assertEquals(false,valid);
+    }
 }
