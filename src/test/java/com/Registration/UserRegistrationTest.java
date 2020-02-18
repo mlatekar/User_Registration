@@ -34,4 +34,14 @@ public class UserRegistrationTest {
         boolean valid=RegisterValidation.validEmailAddress("mh.@.3co.in");
         Assert.assertEquals(false,valid);
     }
+    @Test
+    public void givenPreDefinedMobileNumber_IsProper_ShouldReturnTrue(){
+        boolean valid=RegisterValidation.validMobileNumber("91 8097118449");
+        Assert.assertEquals(true,valid);
+    }
+    @Test
+    public void givenPreDefinedMobileNumber_IsUnProper_ShouldReturnTrue(){
+        boolean valid=RegisterValidation.validMobileNumber("91_0971084");
+        Assert.assertEquals(false,valid);
+    }
 }
