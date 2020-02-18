@@ -44,4 +44,14 @@ public class UserRegistrationTest {
         boolean valid=RegisterValidation.validMobileNumber("91_0971084");
         Assert.assertEquals(false,valid);
     }
+    @Test
+    public void givenPasswordRuleOne_IsProper_ThenReturnTrue(){
+        boolean valid=RegisterValidation.validPasswordRuleOne("aefysfty");
+        Assert.assertEquals(true,valid);
+    }
+    @Test
+    public void givenPasswordRuleOne_IsUnProper_ThenReturnTrue(){
+        boolean valid=RegisterValidation.validPasswordRuleOne("adsfty");
+        Assert.assertEquals(false,valid);
+    }
 }
