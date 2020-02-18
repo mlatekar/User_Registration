@@ -8,11 +8,12 @@ public class RegisterValidation {
     }
     private static final String FIRST_NAME="^[A-Z]{1}[a-zA-Z]{3,}$";
     private static final String LAST_NAME="^[A-Z]{1}[a-zA-Z]{3,}$";
+    private static final String EMAIL_ADDRESS="^[a-zA-Z0-9]{3,}([.-]{1}[a-zA-Z0-9]{3,}+)?[@]{1}[a-zA-Z0-9]+[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2,3})?";
 
     public static boolean validFirstName(String firstName) { return Pattern.matches(FIRST_NAME,firstName); }
 
-    public static boolean validLastName(String lastName) {
-        return Pattern.matches(LAST_NAME,lastName);
-    }
+    public static boolean validLastName(String lastName) { return Pattern.matches(LAST_NAME,lastName); }
+
+    public static boolean validEmailAddress(String emailAddress) { return Pattern.matches(EMAIL_ADDRESS,emailAddress); }
 }
 

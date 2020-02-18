@@ -24,4 +24,14 @@ public class UserRegistrationTest {
         boolean valid=RegisterValidation.validLastName("latekar");
         Assert.assertEquals(false,valid);
     }
+    @Test
+    public void givenEmailAddress_IsProper_ShouldReturnTrue(){
+        boolean valid=RegisterValidation.validEmailAddress("mangesh.latekar@gmail.co.in");
+        Assert.assertEquals(true,valid);
+    }
+    @Test
+    public void givenEmailAddress_IsUnProper_ShouldReturnFalse(){
+        boolean valid=RegisterValidation.validEmailAddress("mh.@.3co.in");
+        Assert.assertEquals(false,valid);
+    }
 }
