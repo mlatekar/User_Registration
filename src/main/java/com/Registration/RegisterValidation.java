@@ -10,7 +10,8 @@ public class RegisterValidation {
     private static final String LAST_NAME="^[A-Z]{1}[a-zA-Z]{3,}$";
     private static final String EMAIL_ADDRESS="^[a-zA-Z0-9]{3,}([.-]{1}[a-zA-Z0-9]{3,}+)?[@]{1}[a-zA-Z0-9]+[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2,3})?";
     private static final String MOBILE_NUMBER="^[0-9]{2}[ ][0-9]{10}";
-    private static final String PASSWORD= "^(?=.*[A-Z])(?=.*[\\d])[A-Za-z0-9]{8,}$";
+    private static final String PASSWORD= "^((?=[^\\W]*[\\W][^\\W]*$))(?=.*[A-Z])(?=.*[\\d])[A-Za-z0-9\\W].{8,}$";
+
 
     public static boolean validFirstName(String firstName) { return Pattern.matches(FIRST_NAME,firstName); }
 
@@ -25,5 +26,7 @@ public class RegisterValidation {
     public static boolean validPasswordWithOneCapitalLetter(String passwordWithCapital) { return Pattern.matches(PASSWORD,passwordWithCapital); }
 
     public static boolean validPasswordWithOneNumber(String passwordWithNumber) { return Pattern.matches(PASSWORD,passwordWithNumber); }
+
+    public static boolean validPasswordWithSpecialCharacter(String passwordWithSpecialCharacter) { return Pattern.matches(PASSWORD,passwordWithSpecialCharacter);}
 }
 

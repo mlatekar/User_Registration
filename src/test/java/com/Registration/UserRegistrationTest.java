@@ -74,4 +74,14 @@ public class UserRegistrationTest {
         boolean valid=RegisterValidation.validPasswordWithOneNumber("HiibRooo");
         Assert.assertEquals(false,valid);
     }
+    @Test
+    public void givenPasswordHaveOneCapitalOneNumberAndExactOneSpecialCharacter_IsProper_ThenReturnTrue(){
+        boolean valid=RegisterValidation.validPasswordWithSpecialCharacter("s@h968rhO");
+        Assert.assertEquals(true,valid);
+    }
+    @Test
+    public void givenPasswordHaveOneCapitalOneNumberAndExactOneSpecialCharacter_IsUnProper_ThenReturnTrue(){
+        boolean valid=RegisterValidation.validPasswordWithSpecialCharacter("imURpass8");
+        Assert.assertEquals(false,valid);
+    }
 }
